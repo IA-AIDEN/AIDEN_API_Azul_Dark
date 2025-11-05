@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" style="background:#0b0c10">
+
+    <style>
+      .t{fill:#e8eef6;font-family:Inter,Segoe UI,Arial,sans-serif}
+      .h{font-size:28px;font-weight:700}
+      .s{font-size:16px;opacity:.95}
+      .b{fill:#111827;stroke:#3b82f6;stroke-width:1.5}
+    </style>
+    
+<text x="50%" y="55" text-anchor="middle" class="t h">AIDEN API Azul Dark — Seguridad y Cumplimiento</text>
+<text x="50%" y="85" text-anchor="middle" class="t s">TLS • AES-256 • RBAC/ABAC • Auditoría • Data Residency</text>
+<rect x="80" y="160" width="260" height="92" rx="14" class="b"/>
+<text x="100" y="212" class="t s">Cifrado en tránsito (TLS)</text>
+<rect x="380" y="160" width="260" height="92" rx="14" class="b"/>
+<text x="400" y="212" class="t s">Cifrado en reposo (AES-256)</text>
+<rect x="680" y="160" width="260" height="92" rx="14" class="b"/>
+<text x="700" y="212" class="t s">Rotación de claves</text>
+<rect x="80" y="282" width="260" height="92" rx="14" class="b"/>
+<text x="100" y="334" class="t s">RBAC/ABAC</text>
+<rect x="380" y="282" width="260" height="92" rx="14" class="b"/>
+<text x="400" y="334" class="t s">Registro de Auditoría</text>
+<rect x="680" y="282" width="260" height="92" rx="14" class="b"/>
+<text x="700" y="334" class="t s">Data Residency (opcional)</text>
+<rect x="80" y="404" width="260" height="92" rx="14" class="b"/>
+<text x="100" y="456" class="t s">PII Masking</text>
+<rect x="380" y="404" width="260" height="92" rx="14" class="b"/>
+<text x="400" y="456" class="t s">Retención configurable</text>
+<rect x="680" y="404" width="260" height="92" rx="14" class="b"/>
+<text x="700" y="456" class="t s">Firmas Webhook</text>
+<rect x="80" y="526" width="260" height="92" rx="14" class="b"/>
+<text x="100" y="578" class="t s">Rate limiting por rol</text>
+<rect x="380" y="526" width="260" height="92" rx="14" class="b"/>
+<text x="400" y="578" class="t s">Bastionado y WAF</text>
+<rect x="680" y="526" width="260" height="92" rx="14" class="b"/>
+<text x="700" y="578" class="t s">Backups verificados</text>
+</svg>

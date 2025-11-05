@@ -1,122 +1,140 @@
-# AIDEN API Azul Dark  
-**AIDEN — Inteligencia Artificial Latina**
 
-AIDEN API Azul Dark es el **modelo corporativo y de integración** del ecosistema AIDEN. Su objetivo es habilitar **capacidades de IA conversacional por voz y texto**, orquestación **multi‑módulo** (Managers & Mixer) y **extensiones empresariales** con seguridad avanzada, auditoría y escalabilidad para **uso productivo en organizaciones**.
+<p align="center">
+  <img src="docs/assets/api-logo.png" width="360" alt="AIDEN API Azul Dark (logo)"/>
+</p>
 
-> Nota: Este repositorio consolida documentación técnica y de negocio. El producto sigue **en desarrollo activo** con un enfoque iterativo (MVP → Beta → GA).
+<h1 align="center">AIDEN API Azul Dark</h1>
+<p align="center"><strong>AIDEN — Inteligencia Artificial Latina</strong></p>
 
 ---
 
-## 1) Arquitectura (visión ejecutiva)
-Diagrama de alto nivel de la plataforma y el plano de integración (servicios, gateways, módulos).
+## Descripción ejecutiva
+**AIDEN API Azul Dark** es el plano corporativo del ecosistema AIDEN: integración segura vía API (REST/SSE/WebSocket), enrutamiento de modelos, agentes **Managers**, proyectos multi‑módulo **Mixer**, controles de costo y cumplimiento. Es un producto **real en evolución**: listo para pilotos y escalamiento controlado.
+
+- **Casos de uso**: automatización de conocimiento, copilotos internos, generación de documentos y código, analítica guiada, voice ops, back‑office IA.
+- **Interfaz**: API + SDKs.
+- **Seguridad**: cifrado, RBAC/ABAC, auditorías, residencias de datos.
+- **Modelos**: selección entre **AIDEN Core** y **AIDEN Azul Deep (Premium)** según costo/latencia/contexto.
+
+---
+
+## Arquitectura (visión ejecutiva)
+Visual interactivo (HTML) y SVG:
+- `docs/assets/architecture.html`
+- `docs/assets/api-diagram.svg`
+
 <p align="center">
-  <img src="docs/assets/api-architecture.svg" width="75%">
+  <img src="docs/assets/api-diagram.svg" width="80%" alt="Arquitectura — AIDEN API Azul Dark"/>
 </p>
 
 **Componentes clave**
-- **Gateway/API**: Autenticación, autorización (RBAC), rate limiting, API keys y OAuth2.
-- **Orquestador**: Encola, enruta y coordina solicitudes entre Managers, Mixer y módulos.
-- **Managers**: Asistentes configurables (p. ej., redacción, análisis, soporte).
-- **Mixer**: Ensambla flujos multi‑módulo (presentaciones, webs, informes, campañas).
-- **Servicios de Voz**: Entrada/salida de voz (prosodia, diarización).  
-- **Persistencia**: Almacenamiento seguro de configuraciones, proyectos y logs.
-- **Observabilidad**: Métricas, tracing, auditoría y dashboards.
+- **Gateway & WAF** con **rate limiting** por rol/proyecto.
+- **Orquestador** (colas/jobs) + **Model Router** (selección dinámica).
+- **Managers** (agentes) y **Mixer** (proyectos compuestos).
+- Observabilidad, auditoría y **storage cifrado**.
 
 ---
 
-## 2) Guía de Integración (resumen)
-Flujo recomendado para conectar aplicaciones internas y externas con AIDEN API.
+## Guía de integración (resumen)
+- `docs/assets/integration.html`
+- `docs/assets/integration-flow.svg`
+
 <p align="center">
-  <img src="docs/assets/api-integration.svg" width="75%">
+  <img src="docs/assets/integration-flow.svg" width="80%" alt="Guía de integración — AIDEN API Azul Dark"/>
 </p>
 
-**Pasos tipo (alto nivel)**
-1. **Registro** de aplicación/servicio y emisión de **API Key / OAuth2 client**.
-2. **Definir Managers** (roles, parámetros, datasets internos permitidos).
-3. **Configurar Mixer** por caso de uso (p. ej., reporte automatizado semanal).
-4. **Conectar canales** (web, móvil, CRM/ERP, BI, Data Lake, bots de voz).
-5. **Pruebas** de carga y latencia; activar **observabilidad** y alertas.
-6. **Despliegue** controlado por etapas (MVP → pilotos → producción).
+**Flujo base**
+1. Registrar aplicación y crear **API Key**.  
+2. Enviar solicitud a `/v1/chat` o `/v1/speech` (stream opcional).  
+3. Recibir **webhooks** (estados/costos/errores).  
+4. Promover **sandbox → producción** con monitoreo activo.
 
 ---
 
-## 3) Seguridad y Cumplimiento
-Modelo de seguridad por capas, con trazabilidad y controles de acceso.
+## Seguridad y cumplimiento
+- `docs/assets/security.html`
+- `docs/assets/security-schema.svg`
+
 <p align="center">
-  <img src="docs/assets/api-security.svg" width="75%">
+  <img src="docs/assets/security-schema.svg" width="80%" alt="Seguridad — AIDEN API Azul Dark"/>
 </p>
 
-**Controles esenciales**
-- **Identidad y Acceso**: OAuth2/OIDC, API Keys, RBAC/ABAC y rotación de credenciales.
-- **Cifrado**: TLS en tránsito; cifrado en reposo para datos y secretos.
-- **Privacidad**: Aislamiento por tenant, **data minimization**, retención configurable.
-- **Auditoría**: Logs firmados, **inmutables**, exportables a SIEM.
-- **Confiabilidad**: SLOs, backups, DR/BCP, pruebas de caos.
-- **Cumplimiento**: Controles orientativos para ISO 27001, SOC 2, GDPR/LatAm.
+**Controles**
+- TLS (en tránsito), AES‑256 (en reposo), rotación de claves.  
+- **RBAC/ABAC**, firmas de webhook, PII masking, data‑residency.  
+- Auditoría y retención programable.
 
 ---
 
-## 4) Modelos y Capacidades (resumen)
-Comparativa breve para selección empresarial.
+## Endpoints (alto nivel)
+| Endpoint | Método | Descripción |
+|---|---|---|
+| `/v1/chat` | POST | Mensajería y razonamiento (stream SSE/WS opcional). |
+| `/v1/speech` | POST | Entrada de voz y TTS con control de prosodia. |
+| `/v1/images` | POST | Generación/edición de imágenes con políticas. |
+| `/v1/managers` | POST/GET | Configuración y ejecución de agentes. |
+| `/v1/mixer` | POST | Creación de proyectos compuestos. |
+| `/v1/usage` | GET | Métricas, costos y límites por API key. |
 
-| Característica | AIDEN Core | AIDEN Azul Deep (Premium) | AIDEN API Azul Dark |
-|---|---:|---:|---:|
-| Enfoque | Conversación base | Razonamiento + creatividad | Integración y escalabilidad |
-| Ventana de contexto | ~32K | ~500K | ~1M |
-| Voz | Sí (básico) | Sí (natural/prosodia) | Sí (ejecutiva y personalizable) |
-| Managers | — | Hasta 3/usuario | Ilimitados por tenant |
-| Mixer | — | Proyectos predefinidos | Flujos complejos y orquestación |
-| Seguridad | Estándar | Avanzada | Empresarial + auditoría |
-| Acceso | Web/Móvil | Web/Móvil/Studio | API/SDK/Conectores |
+**Auth**: `Authorization: Bearer <API_KEY>`  
+**Límites iniciales**: 60 req/min; 3 MB/min audio; 25 MB imagen.  
 
 ---
 
-## 5) Monetización y Proyección (resumen)
+## SLA & planes corporativos
+| Plan | SLA | Soporte | Capacidad | Personalización |
+|---|---|---|---|---|
+| Enterprise | 99.9% | Dedicado | Alto | SDKs, webhooks, residencias |
+| Unlimited | 99.95% | TAM | Muy alto | On‑prem opc., ruteo avanzado |
+
+---
+
+## Monetización y proyección (resumen)
 <p align="center">
-  <img src="docs/assets/api-monetization.svg" width="75%">
+  <img src="docs/assets/monetization-chart.png" width="68%" alt="Monetización — AIDEN API Azul Dark"/>
 </p>
 
-**Modelo de ingresos**
-- **Suscripción Enterprise**: desde **USD $175/mes** por tenant (capacidad base).
-- **Sobrecargos por uso**: voz, contexto extendido, jobs batch, SLO premium.
-- **Proyectos a medida** (AIDEN Studio): integraciones y verticalización.
-
-**Hitos proyectados** (alineados a planes previos): 2027 → **$8.5M**, 2028 → **$46M**, 2029–2030 → **$125M** (ingresos brutos aproximados combinados).
-
----
-
-## 6) Hoja de Ruta 2025–2030 (resumen)
-Etapas principales del programa de producto.
-<p align="center">
-  <img src="docs/assets/api-roadmap.svg" width="75%">
-</p>
-
-- **2025–2026**: Consolidación del core y de la capa de integración.  
-- **2027**: Monetización inicial (H2), pilotos enterprise, primera ola de partners.  
-- **2028**: Escalamiento global LATAM/EE. UU./Europa, verticales regulados.  
-- **2029–2030**: Consolidación, optimizaciones y nuevos módulos de voz y datos.
+| Año | Ingresos Totales Estimados (USD) | Etapa |
+|---|---:|---|
+| 2027 (H2) | 14.55M | Monetización inicial API + upsell |
+| 2028 | 86.0M | Escalamiento y expansión |
+| 2029–2030 | 125.5M | Consolidación global |
 
 ---
 
-## 7) Alianzas Estratégicas Potenciales
-AIDEN API Azul Dark avanza hacia una **red global de alianzas estratégicas** con líderes tecnológicos. Buscamos relaciones **de pares y co‑innovación**, evitando dependencias críticas, y reafirmando a **AIDEN como líder latinoamericano** con proyección global.
+## Comparativa (alto nivel)
+| Capacidad | AIDEN API Azul Dark | AIDEN Azul Deep | AIDEN Core |
+|---|---|---|---|
+| Contexto | Muy alto (hasta 1M tokens) | Alto (hasta 500K) | Medio (hasta 32K) |
+| Modalidades | Voz, texto, imágenes | Voz, texto, imágenes | Voz y texto |
+| Managers | Avanzado + RBAC | Intermedio | Básico |
+| Mixer | Pipelines enterprise | Proyectos creativos/pro | — |
+| Seguridad | Auditoría, residencias | Cifrado estándar | Cifrado estándar |
 
-| Categoría | Potenciales socios |
+---
+
+## Alianzas estratégicas potenciales
+AIDEN API Azul Dark avanza hacia una red global de **socios estratégicos** manteniendo independencia tecnológica y liderazgo desde **Latinoamérica**.
+
+| Categoría | Socios potenciales |
 |---|---|
-| Nube e infraestructura | Google Cloud, AWS, Microsoft Azure, Oracle, Huawei Cloud |
-| Datos y BI | Snowflake, Databricks, BigQuery, Power BI |
-| Seguridad | CrowdStrike, Palo Alto Networks, Okta |
-| Contact Center / Voz | Twilio, Vonage, Genesys |
-| Integración / iPaaS | MuleSoft, Boomi, Workato |
+| Nube/Infra | Google Cloud, AWS, Microsoft Azure, Oracle, Huawei Cloud |
+| Observabilidad/Sec | Datadog, New Relic, Splunk, Snyk, HashiCorp |
+| Datos/MLOps | Snowflake, Databricks, Airflow, Prefect, DBT |
+| Telecom/Edge | Telefónica, Claro, Verizon, Equinix |
 
 ---
 
-## 8) Licencia y Contacto
-Este repositorio de documentación se publica bajo **Licencia MIT**.  
-Para uso comercial de modelos o integraciones empresariales, contáctanos.
+## Recursos
+- Arquitectura (HTML): `docs/assets/architecture.html`  
+- Integración (HTML): `docs/assets/integration.html`  
+- Seguridad (HTML): `docs/assets/security.html`  
+- Roadmap (HTML): `docs/assets/roadmap.html`
 
+---
+
+### Licencia y contacto
+Código del repositorio bajo **MIT**. El uso comercial de modelos/servicios requiere **autorización expresa** de **JMC Studio Creativo**.  
 **Contacto**: contacto@jmcstudiocreativo.com
-
----
 
 © 2025 JMC Studio Creativo — AIDEN IA Latina. Todos los derechos reservados. Desarrollado en Guayaquil, Ecuador.
