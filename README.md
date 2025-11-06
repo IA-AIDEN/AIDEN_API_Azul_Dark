@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/AIDEN Logotipo 3.svg" width="360" alt="AIDEN API Azul Dark (logo)"/>
+  <img src="docs/assets/AIDEN Logotipo 3.svg" width="500" alt="AIDEN API Azul Dark (logo)"/>
 </p>
 
 <h1 align="center">AIDEN API Azul Dark</h1>
