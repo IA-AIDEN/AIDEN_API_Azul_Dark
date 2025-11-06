@@ -37,7 +37,7 @@ Visual interactivo (HTML) y SVG:
 - `docs/assets/integration-flow.svg`
 
 <p align="center">
-  <img src="docs/assets/integration-flow.svg" width="80%" alt="Guía de integración — AIDEN API Azul Dark"/>
+  <img src="docs/assets/Guía de integración.png" width="80%" alt="Guía de integración — AIDEN API Azul Dark"/>
 </p>
 
 **Flujo base**
