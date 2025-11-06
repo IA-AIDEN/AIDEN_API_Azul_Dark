@@ -53,7 +53,7 @@ Visual interactivo (HTML) y SVG:
 - `docs/assets/security-schema.svg`
 
 <p align="center">
-  <img src="docs/assets/security-schema.svg" width="80%" alt="Seguridad — AIDEN API Azul Dark"/>
+  <img src="docs/assets/Seguridad y cumplimiento.png" width="80%" alt="Seguridad — AIDEN API Azul Dark"/>
 </p>
 
 **Controles**
