@@ -21,7 +21,7 @@
 Visual interactivo (HTML) y SVG:
 
 <p align="center">
-  <img src="docs/assets/api-diagram.svg" width="80%" alt="Arquitectura — AIDEN API Azul Dark"/>
+  <img src="docs/assets/Arquitectura.png" width="80%" alt="Arquitectura — AIDEN API Azul Dark"/>
 </p>
 
 **Componentes clave**
