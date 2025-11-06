@@ -20,8 +20,6 @@
 
 ## Arquitectura (visión ejecutiva)
 Visual interactivo (HTML) y SVG:
-- `docs/assets/architecture.html`
-- `docs/assets/api-diagram.svg`
 
 <p align="center">
   <img src="docs/assets/api-diagram.svg" width="80%" alt="Arquitectura — AIDEN API Azul Dark"/>
