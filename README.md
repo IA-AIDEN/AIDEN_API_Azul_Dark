@@ -88,9 +88,6 @@ Visual interactivo (HTML) y SVG:
 ---
 
 ## Monetización y proyección (resumen)
-<p align="center">
-  <img src="docs/assets/monetization-chart.png" width="68%" alt="Monetización — AIDEN API Azul Dark"/>
-</p>
 
 | Año | Ingresos Totales Estimados (USD) | Etapa |
 |---|---:|---|
