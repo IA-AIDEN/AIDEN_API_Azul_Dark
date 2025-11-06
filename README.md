@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="docs/assets/api-logo.png" width="360" alt="AIDEN API Azul Dark (logo)"/>
 </p>
