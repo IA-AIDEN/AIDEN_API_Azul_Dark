@@ -23,6 +23,7 @@ Visual interactivo (HTML) y SVG:
 La arquitectura de **AIDEN API Azul Dark** se fundamenta en un diseño modular y escalable que permite administrar, enrutar y ejecutar múltiples modelos de IA dentro de un mismo ecosistema seguro. Cada componente ha sido desarrollado bajo criterios de resiliencia, disponibilidad y optimización de costos, garantizando un flujo estable de peticiones tanto en entornos empresariales como en pruebas controladas. La visión ejecutiva de esta arquitectura es permitir que cualquier organización, desde startups hasta corporaciones, pueda integrar las capacidades cognitivas de AIDEN de forma directa y flexible mediante API, sin requerir infraestructura adicional o conocimiento profundo en machine learning.
 
 
+
 <p align="center">
   <img src="docs/assets/Arquitectura.png" width="80%" alt="Arquitectura — AIDEN API Azul Dark"/>
 </p>
