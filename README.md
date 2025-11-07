@@ -23,7 +23,6 @@ Visual interactivo (HTML) y SVG:
 La arquitectura de **AIDEN API Azul Dark** se fundamenta en un diseño modular y escalable que permite administrar, enrutar y ejecutar múltiples modelos de IA dentro de un mismo ecosistema seguro. Cada componente ha sido desarrollado bajo criterios de resiliencia, disponibilidad y optimización de costos, garantizando un flujo estable de peticiones tanto en entornos empresariales como en pruebas controladas. La visión ejecutiva de esta arquitectura es permitir que cualquier organización, desde startups hasta corporaciones, pueda integrar las capacidades cognitivas de AIDEN de forma directa y flexible mediante API, sin requerir infraestructura adicional o conocimiento profundo en machine learning.
 
 
-
 <p align="center">
   <img src="docs/assets/Arquitectura.png" width="80%" alt="Arquitectura — AIDEN API Azul Dark"/>
 </p>
@@ -39,6 +38,9 @@ La arquitectura de **AIDEN API Azul Dark** se fundamenta en un diseño modular y
 ## Guía de integración (resumen)
 - `docs/assets/integration.html`
 - `docs/assets/integration-flow.svg`
+
+El proceso de integración con **AIDEN API Azul Dark** ha sido diseñado para ser intuitivo y rápido, priorizando la simplicidad del onboarding y la eficiencia en la implementación. Los desarrolladores o equipos técnicos solo necesitan registrar una aplicación, obtener su clave API y comenzar a interactuar con los endpoints disponibles. El flujo estándar permite iniciar en modo sandbox y luego escalar a producción con total trazabilidad, asegurando que cada interacción esté controlada, registrada y asociada a métricas de costo y uso. Esta guía resume los pasos esenciales para integrar los servicios de voz, texto e imagen, abriendo el acceso a un ecosistema robusto y personalizable.
+
 
 <p align="center">
   <img src="docs/assets/Guía de integración.png" width="80%" alt="Guía de integración — AIDEN API Azul Dark"/>
