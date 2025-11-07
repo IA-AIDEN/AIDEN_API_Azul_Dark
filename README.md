@@ -58,6 +58,9 @@ El proceso de integración con **AIDEN API Azul Dark** ha sido diseñado para se
 - `docs/assets/security.html`
 - `docs/assets/security-schema.svg`
 
+**AIDEN API Azul Dark** está construido con un enfoque de seguridad “por diseño”, integrando cifrado avanzado, autenticación basada en roles (RBAC/ABAC) y auditorías completas en todos los niveles. Los datos viajan cifrados en tránsito (TLS) y se almacenan bajo políticas AES-256 en reposo, con rotación automática de claves y opciones de residencia de datos según la jurisdicción del cliente. Además, el sistema implementa controles de privacidad y anonimización (PII masking), junto con mecanismos de retención programable y cumplimiento con estándares globales. La prioridad es ofrecer a las organizaciones un entorno confiable y conforme a las regulaciones de seguridad internacionales.
+
+
 <p align="center">
   <img src="docs/assets/Seguridad y cumplimiento.png" width="80%" alt="Seguridad — AIDEN API Azul Dark"/>
 </p>
@@ -70,6 +73,9 @@ El proceso de integración con **AIDEN API Azul Dark** ha sido diseñado para se
 ---
 
 ## Endpoints (alto nivel)
+
+Los endpoints de **AIDEN API Azul Dark** representan el núcleo funcional de todo el ecosistema. Cada uno ha sido diseñado para ofrecer una operación específica dentro del flujo de inteligencia artificial: mensajería contextual, entrada de voz, generación de imágenes, administración de agentes (Managers) y composición de proyectos (Mixer). Las rutas están optimizadas para mantener equilibrio entre velocidad, costo y control granular, permitiendo que cada cliente escale su propia infraestructura cognitiva bajo un modelo “plug and play”. Con métricas detalladas y límites configurables, el sistema garantiza rendimiento predecible y transparencia operativa.
+
 | Endpoint | Método | Descripción |
 |---|---|---|
 | `/v1/chat` | POST | Mensajería y razonamiento (stream SSE/WS opcional). |
@@ -102,7 +108,10 @@ El proceso de integración con **AIDEN API Azul Dark** ha sido diseñado para se
 
 ---
 
-## Comparativa (alto nivel)
+## Comparativa (alto nivel) 
+
+En esta comparativa se destacan las diferencias entre las tres versiones del ecosistema AIDEN: **AIDEN Core**, **AIDEN Azul Deep** y **AIDEN API Azul Dark**. Mientras Core representa el entorno base de uso general, Azul Deep incorpora mayor capacidad de contexto y procesamiento premium; Azul Dark, en cambio, es la versión corporativa, diseñada para entornos empresariales de alta demanda, con auditoría avanzada, residencias de datos y ruteo inteligente de modelos. Esta visión comparativa permite a los socios y potenciales inversionistas comprender cómo cada capa de AIDEN se adapta a distintos escenarios de negocio, desde soluciones creativas hasta infraestructuras de IA empresarial a gran escala.
+
 | Capacidad | AIDEN API Azul Dark | AIDEN Azul Deep | AIDEN Core |
 |---|---|---|---|
 | Contexto | Muy alto (hasta 1M tokens) | Alto (hasta 500K) | Medio (hasta 32K) |
